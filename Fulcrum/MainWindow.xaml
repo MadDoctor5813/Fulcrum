@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Fulcrum"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Fulcrum" Height="137" Width="525">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnCreate" Content="Create" Margin="10" Click="btnCreate_Click"/>
+        <Button x:Name="btnExtract" Content="Extract" Grid.Column="1" Margin="10"/>
     </Grid>
 </Window>

@@ -1,0 +1,23 @@
+﻿<Window x:Class="Fulcrum.CreateDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Fulcrum"
+        mc:Ignorable="d"
+        Title="Create" Height="300" Width="423.485">
+    <Grid>
+        <Grid Margin="0,0,0,195">
+            <Label x:Name="lblInputDir" Content="Input Directory:" Margin="10,10,313,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="inputDir" Height="20" Margin="106,14,83,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Button x:Name="btnBrowse" Content="Browse..." Height="20" Margin="0,14,10,0" VerticalAlignment="Top" RenderTransformOrigin="1.237,0.805" HorizontalAlignment="Right" Width="68"/>
+            <Label x:Name="label" Content="Output File:" Margin="30,41,313,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBox" Height="20" Margin="106,45,83,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Button x:Name="button" Content="Open..." Margin="0,45,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="68"/>
+
+        </Grid>
+        <Grid Height="48" Margin="0" VerticalAlignment="Bottom">
+            <Button x:Name="btnCreate" Content="Create" Margin="139,0,139,10" Height="22" VerticalAlignment="Bottom"/>
+        </Grid>
+    </Grid>
+</Window>

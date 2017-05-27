@@ -10,25 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Fulcrum
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CreateDialog.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CreateDialog : Window
     {
-        public MainWindow()
+        public CreateDialog()
         {
             InitializeComponent();
         }
 
-        private void btnCreate_Click(object sender, RoutedEventArgs e)
-        {
-            CreateDialog dlg = new CreateDialog();
-            dlg.Show();
-        }
     }
 }
