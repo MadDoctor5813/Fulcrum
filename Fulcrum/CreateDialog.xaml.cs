@@ -1,6 +1,7 @@
 ﻿using Ookii.Dialogs;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,9 +50,20 @@ namespace Fulcrum
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-            FulcrumFile file = new FulcrumFile();
-            file.CreateFromDirectory(inputDir.Text);
-            file.SaveToFile(outputFile.Text);
+            BackgroundWorker worker = new BackgroundWorker();
+            string inputDirStr = inputDir.Text;
+            string outputFileStr = outputFile.Text;
+            worker.DoWork += delegate (object s, DoWorkEventArgs args)
+            {
+                FulcrumFile file = new FulcrumFile();
+                file.CreateFromDirectory(inputDirStr);
+                file.SaveToFile(outputFileStr);
+            };
+            worker.RunWorkerCompleted += delegate (object s, RunWorkerCompletedEventArgs args)
+            {
+                MessageBox.Show("File created.");
+            };
+            worker.RunWorkerAsync();
         }
     }
 }
