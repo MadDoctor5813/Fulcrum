@@ -17,7 +17,7 @@
 
         </Grid>
         <Grid Height="48" Margin="0" VerticalAlignment="Bottom">
-            <Button x:Name="btnCreate" Content="Create" Margin="139,0,139,10" Height="22" VerticalAlignment="Bottom"/>
+            <Button x:Name="btnCreate" Content="Create" Margin="139,0,139,10" Height="22" VerticalAlignment="Bottom" Click="btnCreate_Click"/>
         </Grid>
     </Grid>
 </Window>

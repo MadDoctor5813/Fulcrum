@@ -46,5 +46,12 @@ namespace Fulcrum
                 outputFile.Text = dlg.FileName;
             }
         }
+
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+            FulcrumFile file = new FulcrumFile();
+            file.CreateFromDirectory(inputDir.Text);
+            file.SaveToFile(outputFile.Text);
+        }
     }
 }
