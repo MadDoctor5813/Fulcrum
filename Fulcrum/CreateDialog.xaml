@@ -8,10 +8,10 @@
         Title="Create" Height="300" Width="720">
     <Grid>
         <Grid Margin="0,0,0,195">
-            <Label x:Name="lblInputDir" Content="Input Directory:" Margin="10,10,313,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblInputDir" Content="Input Directory:" Margin="14,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="92"/>
             <TextBox x:Name="inputDir" Height="20" Margin="106,14,83,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
             <Button x:Name="btnBrowse" Content="Browse..." Height="20" Margin="0,14,10,0" VerticalAlignment="Top" RenderTransformOrigin="1.237,0.805" HorizontalAlignment="Right" Width="68" Click="btnBrowse_Click"/>
-            <Label x:Name="lblOutputFile" Content="Output File:" Margin="30,41,313,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblOutputFile" Content="Output File:" Margin="34,41,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="72"/>
             <TextBox x:Name="outputFile" Height="20" Margin="106,45,83,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
             <Button x:Name="btnOpen" Content="Open..." Margin="0,45,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="68" Click="button_Click"/>
 
