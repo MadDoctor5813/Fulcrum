@@ -97,7 +97,7 @@ namespace Fulcrum
             string inFilePath = Path.Combine(root.Name, entry.Name);
             if (entry.Type == EntryType.EntryFile)
             {
-                using (FileStream inFile = new FileStream(inFilePath, FileMode.Open))
+                using (FileStream inFile = new FileStream(inFilePath, FileMode.Open, FileAccess.Read))
                 {
                     entry.Offset = writer.BaseStream.Position;
                     inFile.CopyTo(writer.BaseStream);
