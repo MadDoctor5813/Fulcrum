@@ -35,7 +35,7 @@ namespace Fulcrum
                 inputDir.Text = dlg.SelectedPath;
             }
         }
-
+        
         private void button_Click(object sender, RoutedEventArgs e)
         {
             VistaSaveFileDialog dlg = new VistaSaveFileDialog();
@@ -59,11 +59,9 @@ namespace Fulcrum
                 file.CreateFromDirectory(inputDirStr);
                 file.SaveToFile(outputFileStr);
             };
-            worker.RunWorkerCompleted += delegate (object s, RunWorkerCompletedEventArgs args)
-            {
-                MessageBox.Show("File created.");
-            };
-            worker.RunWorkerAsync();
+            CreateProgressDialog dlg = new CreateProgressDialog(worker, System.IO.Path.GetFileName(outputFileStr));
+            dlg.ShowDialog();
+            Close();
         }
     }
 }
