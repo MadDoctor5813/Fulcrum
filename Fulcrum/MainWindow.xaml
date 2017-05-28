@@ -12,6 +12,6 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Button x:Name="btnCreate" Content="Create" Margin="10" Click="btnCreate_Click"/>
-        <Button x:Name="btnExtract" Content="Extract" Grid.Column="1" Margin="10"/>
+        <Button x:Name="btnExtract" Content="Extract" Grid.Column="1" Margin="10" Click="btnExtract_Click"/>
     </Grid>
 </Window>

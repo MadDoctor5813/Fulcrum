@@ -30,5 +30,11 @@ namespace Fulcrum
             CreateDialog dlg = new CreateDialog();
             dlg.Show();
         }
+
+        private void btnExtract_Click(object sender, RoutedEventArgs e)
+        {
+            ExtractDialog dlg = new ExtractDialog();
+            dlg.Show();
+        }
     }
 }
