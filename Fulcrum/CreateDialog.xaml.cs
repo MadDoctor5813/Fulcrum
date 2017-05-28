@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ookii.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,26 @@ namespace Fulcrum
             InitializeComponent();
         }
 
+        private void btnBrowse_Click(object sender, RoutedEventArgs e)
+        {
+            VistaFolderBrowserDialog dlg = new VistaFolderBrowserDialog();
+            dlg.SelectedPath = Environment.CurrentDirectory;
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                inputDir.Text = dlg.SelectedPath;
+            }
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            VistaSaveFileDialog dlg = new VistaSaveFileDialog();
+            dlg.DefaultExt = ".ful";
+            dlg.AddExtension = true;
+            dlg.Filter = "Fulcrum files (*.ful)|*.ful";
+            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                outputFile.Text = dlg.FileName;
+            }
+        }
     }
 }
