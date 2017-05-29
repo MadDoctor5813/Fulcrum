@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.ComponentModel;
 
 namespace Fulcrum
 {
@@ -44,6 +45,19 @@ namespace Fulcrum
             {
                 arcFile.Text = dlg.FileName;
             }
+        }
+
+        private void btnExtract_Click(object sender, RoutedEventArgs e)
+        {
+            BackgroundWorker worker = new BackgroundWorker();
+            string arcFileStr = arcFile.Text;
+            worker.DoWork += delegate (object s, DoWorkEventArgs args)
+            {
+                FulcrumFile file = new FulcrumFile();
+                file.LoadFromFile(arcFileStr);
+            };
+            string dlgText = string.Format("Extracting {0}", System.IO.Path.GetFileName(arcFileStr));
+            ProgressDialog dlg = new ProgressDialog(worker, "Extract", dlgText);
         }
     }
 }

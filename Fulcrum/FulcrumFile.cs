@@ -126,5 +126,32 @@ namespace Fulcrum
             }
         }
 
+        public void LoadFromFile(string file)
+        {
+            using (BinaryReader reader = new BinaryReader(new FileStream(file, FileMode.Open, FileAccess.Read)))
+            {
+                reader.BaseStream.Seek(-sizeof(long), SeekOrigin.End);
+                long fileTableOfset = reader.ReadInt64();
+                reader.BaseStream.Seek(fileTableOfset, SeekOrigin.Begin);
+                root = LoadFileEntry(reader);
+            }
+        }
+
+        private FileEntry LoadFileEntry(BinaryReader reader)
+        {
+            FileEntry entry = new FileEntry();
+            entry.Type = (EntryType)reader.ReadInt32();
+            entry.Name = reader.ReadString();
+            entry.Offset = reader.ReadInt64();
+            entry.Len = reader.ReadInt64();
+            int numChildren = reader.ReadInt32();
+            entry.Children = new List<FileEntry>(numChildren);
+            for (int i = 0; i < numChildren; i++)
+            {
+                entry.Children.Add(LoadFileEntry(reader));
+            }
+            return entry;
+        }
+
     }
 }
