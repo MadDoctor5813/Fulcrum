@@ -16,14 +16,15 @@ using System.Windows.Shapes;
 namespace Fulcrum
 {
     /// <summary>
-    /// Interaction logic for CreateProgressDialog.xaml
+    /// Interaction logic for ProgressDialog.xaml
     /// </summary>
-    public partial class CreateProgressDialog : Window
+    public partial class ProgressDialog : Window
     {
-        public CreateProgressDialog(BackgroundWorker worker, string outputFileName)
+        public ProgressDialog(BackgroundWorker worker, string title, string text)
         {
             InitializeComponent();
-            progLabel.Content = "Creating " + outputFileName;
+            Title = title;
+            progLabel.Content = text;
             worker.RunWorkerCompleted += delegate (object s, RunWorkerCompletedEventArgs args)
             {
                 Close();

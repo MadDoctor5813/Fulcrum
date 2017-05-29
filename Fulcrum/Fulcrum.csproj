@@ -59,7 +59,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CreateProgressDialog.xaml">
+    <Page Include="ProgressDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -78,8 +78,8 @@
     <Compile Include="CreateDialog.xaml.cs">
       <DependentUpon>CreateDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CreateProgressDialog.xaml.cs">
-      <DependentUpon>CreateProgressDialog.xaml</DependentUpon>
+    <Compile Include="ProgressDialog.xaml.cs">
+      <DependentUpon>ProgressDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExtractDialog.xaml.cs">
       <DependentUpon>ExtractDialog.xaml</DependentUpon>

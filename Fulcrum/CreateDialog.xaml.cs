@@ -59,7 +59,8 @@ namespace Fulcrum
                 file.CreateFromDirectory(inputDirStr);
                 file.SaveToFile(outputFileStr);
             };
-            CreateProgressDialog dlg = new CreateProgressDialog(worker, System.IO.Path.GetFileName(outputFileStr));
+            string dlgText = string.Format("Creating {0}", System.IO.Path.GetFileName(outputFileStr));
+            ProgressDialog dlg = new ProgressDialog(worker, "Creating File", dlgText);
             dlg.ShowDialog();
             Close();
         }
